@@ -2,10 +2,10 @@ FROM eclipse-mosquitto:2.0.22
 
 
 # Copiar entrypoint propio
-COPY entrypoint.sh /docker-entrypoint.sh
-RUN chmod +x /docker-entrypoint.sh
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
 
 
 COPY config/mosquitto.conf /mosquitto/config/mosquitto.conf
 
-ENTRYPOINT ["/docker-entrypoint.sh"]
+ENTRYPOINT ["/entrypoint.sh"]
