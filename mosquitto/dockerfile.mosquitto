@@ -1,8 +1,8 @@
 FROM eclipse-mosquitto:2.0.22
 
 #pass arguments from docker compose to the build
-ENV MQTT_USER
-ENV MQTT_PASS
+ENV MQTT_USER=MQTT_USER
+ENV MQTT_PASS=MQTT_PASS
 
 # copy config files
 COPY config /mosquitto/config

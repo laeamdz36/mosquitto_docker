@@ -8,6 +8,7 @@ services:
     container_name: mosquitto_broker
     env_file:
       - secret.env
+    entrypoint: ["/mosquitto/entrypoint.sh"]
     restart: always
     ports:
       # <puerto_host>:<puerto_contenedor>
@@ -17,4 +18,3 @@ services:
       - "./mosquitto/config:/mosquitto/config"
       - "./mosquitto/data:/mosquitto/data"
       - "./mosquitto/log:/mosquitto/log"
-      - ./mosquitto/entrypoint.sh:/docker-entrypoint-init.d/10-passwd.sh:ro
