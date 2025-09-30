@@ -6,8 +6,9 @@ ARG MQTT_PASS
 
 # copy config files
 COPY config /mosquitto/config
-COPY data /mosquitto/data
-COPY log /mosquitto/log
+# No configuration for this directories for now
+#COPY data /mosquitto/data
+#COPY log /mosquitto/log
 
 
 # execute line code for create user an password
