@@ -8,7 +8,7 @@ services:
     container_name: mosquitto_broker
     env_file:
       - secret.env
-    entrypoint: ["/mosquitto/entrypoint.sh"]
+    #entrypoint: ["/mosquitto/entrypoint.sh"]
     restart: always
     ports:
       # <puerto_host>:<puerto_contenedor>
