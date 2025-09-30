@@ -4,8 +4,7 @@ FROM eclipse-mosquitto:2.0.22
 # Copiar entrypoint propio
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
-
-
+# Copy configuration
 COPY config/mosquitto.conf /mosquitto/config/mosquitto.conf
 
 ENTRYPOINT ["/entrypoint.sh"]
