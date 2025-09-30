@@ -1,15 +1,11 @@
 FROM eclipse-mosquitto:2.0.22
 
-#pass arguments from docker compose to the build
-ENV MQTT_USER=MQTT_USER
-ENV MQTT_PASS=MQTT_PASS
 
-# copy config files
-COPY config /mosquitto/config
-# No configuration for this directories for now
-#COPY data /mosquitto/data
-#COPY log /mosquitto/log
+# Copiar entrypoint propio
+COPY entrypoint.sh /docker-entrypoint.sh
+RUN chmod +x /docker-entrypoint.sh
 
 
-# execute line code for create user an password
-RUN mosquitto_passwd -c -b /mosquitto/config/passwd $MQTT_USER $MQTT_PASS
+COPY config/mosquitto.conf /mosquitto/config/mosquitto.conf
+
+ENTRYPOINT ["/docker-entrypoint.sh"]
