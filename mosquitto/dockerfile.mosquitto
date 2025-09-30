@@ -1,0 +1,14 @@
+FROM eclipse-mosquitto:2.0.22
+
+#pass arguments from docker compose to the build
+ARG MQTT_USER
+ARG MQTT_PASS
+
+# copy config files
+COPY config /mosquitto/config
+COPY data /mosquitto/data
+COPY log /mosquitto/log
+
+
+# execute line code for create user an password
+RUN mosquitto_passwd -c -b /mosquitto/config/passwd $MQTT_USER $MQTT_PASS
