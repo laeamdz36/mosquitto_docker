@@ -9,7 +9,7 @@ services:
     env_file:
       - secret.env
     #entrypoint: ["/mosquitto/entrypoint.sh"]
-    restart: always
+    # restart: always
     ports:
       # <puerto_host>:<puerto_contenedor>
       - "1883:1883" # MQTT
