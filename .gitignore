@@ -9,3 +9,10 @@ __pycache__/
 *$py.class
 pwfile
 passwd
+
+# ignore data and log direcotries
+/log/*
+/data/*
+
+!/data/.gitkeep
+!/log/.gitkeep
