@@ -2,9 +2,10 @@ FROM eclipse-mosquitto:2.0.22
 
 # Copiar entrypoint propio
 COPY entrypoint.sh /entrypoint.sh
+# Chage the mode to allow execution
 RUN chmod +x /entrypoint.sh
 # Copy configuration
-COPY config/mosquitto.conf /mosquitto/config/mosquitto.conf
+#COPY config/mosquitto.conf /mosquitto/config/mosquitto.conf
 # first - is the UID of the user inside of the container
 # second - is the GID (group id) of the group inside of the container
 USER 1883:1883
