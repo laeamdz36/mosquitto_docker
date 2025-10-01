@@ -16,5 +16,5 @@ services:
       - "9001:9001" # Websocket
     volumes:
       - "./mosquitto/config:/mosquitto/config"
-      # - "./mosquitto/data:/mosquitto/data"
-      # - "./mosquitto/log:/mosquitto/log"
+      - "./mosquitto/data:/mosquitto/data"
+      - "./mosquitto/log:/mosquitto/log"
